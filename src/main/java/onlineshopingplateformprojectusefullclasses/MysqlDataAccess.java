@@ -16,7 +16,7 @@ public class MysqlDataAccess {
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url="jdbc:mysql://localhost:3306/ospd";
         String user="root";
-        String password="PAN@6869m";
+        String password="";
         con=DriverManager.getConnection(url, user, password);
     	}
     	catch(Exception e) {
