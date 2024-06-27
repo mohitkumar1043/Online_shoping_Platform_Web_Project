@@ -13,10 +13,13 @@ TECHNOLOGIES USED
 Servlets: Used for handling client requests and responses.
 managing the flow of data between the view (JSP) and the
 model (database).
+
 JSP (JavaServer Pages):JSP files contain HTML and Java code,
 allowing for dynamic content generation.
+
 JDBC (Java Database Connectivity):JDBC is used to execute SQL
 queries and interact with the MySQL database.
+
 MySQL: The database system used to store and manage the
 application’s data. MySQL provides a reliable and efficient way
 to handle large datasets.
