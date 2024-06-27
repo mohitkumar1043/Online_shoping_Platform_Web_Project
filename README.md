@@ -1,6 +1,7 @@
 Online Shopping Project Using Servlets, JSP, JDBC, and MySQL
 
 OVERVIEW
+
 This project integrates several core Java EE technologies,
 including Servlets, JavaServer Pages (JSP), Java Database Con‐
 nectivity (JDBC), and MySQL for database management. The
@@ -8,6 +9,7 @@ combination of these technologies ensures a robust, dynamic,
 and scalable solution for managing online shopping activities.
 
 TECHNOLOGIES USED
+
 Servlets: Used for handling client requests and responses.
 managing the flow of data between the view (JSP) and the
 model (database).
@@ -22,11 +24,13 @@ to handle large datasets.
 PROJECT FEATURES
 
 For Users:
+
 User Registration and Authentication,Product Catalog,Search
 Functionality,Shopping Cart,Order Management,print bill,User
 Profile Management,Message Us,logout
 
 For Admin:
+
 Admin Authentication,add new product,show all product and
 admin can edit all product,message received,orders received
 and admin can cancel and delivered orders ,cancel orders
