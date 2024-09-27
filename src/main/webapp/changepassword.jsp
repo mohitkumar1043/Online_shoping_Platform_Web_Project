@@ -43,7 +43,13 @@ if("notMatch".equals(msg)){
 <%
 }
 %>
-
+<% 
+if("notstrong".equals(msg)){
+	%>
+ <h3 class="alert">Enter Strong Password!</h3>
+<% 
+}
+%>
 <% 
 if("wrong".equals(msg)){
 %>

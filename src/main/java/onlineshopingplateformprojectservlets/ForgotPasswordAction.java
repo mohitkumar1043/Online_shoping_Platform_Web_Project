@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import onlineshopingplateformprojectusefullclasses.User;
+import onlineshopingplateformprojectusefullclasses.ChekPasswordStrongOrNot;
 import onlineshopingplateformprojectusefullclasses.MysqlDataAccess;
 @SuppressWarnings("serial")
 @WebServlet("/forgotpasswordaction")
@@ -23,6 +24,16 @@ public class ForgotPasswordAction extends HttpServlet {
 		String sqquestion=request.getParameter("securityquestion");
 		String sqanswer=request.getParameter("sqanswer");
 		String newpassword=request.getParameter("newpassword");
+		 // cheking password is strong or not
+		// CPSON chek password strong or not object
+		ChekPasswordStrongOrNot CPSON= new ChekPasswordStrongOrNot();
+		boolean is_password_Strong =CPSON.strongPasswordChecker(newpassword);
+		if( is_password_Strong==false ) {
+			response.sendRedirect("forgotpassword.jsp?msg=notstrong");	
+		}
+		else {
+		
+		
 	  User u= new User(email,mobilenumber,sqquestion,sqanswer,newpassword);
 	  
 	// DAO=data access object
@@ -48,5 +59,5 @@ public class ForgotPasswordAction extends HttpServlet {
 		
 		
 	}
-
+	}
 }
