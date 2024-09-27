@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import onlineshopingplateformprojectusefullclasses.ChekPasswordStrongOrNot;
 import onlineshopingplateformprojectusefullclasses.MysqlDataAccess;
 import java.sql.*;
 import java.io.IOException;
@@ -22,9 +23,19 @@ public class ChangePasswordAction extends HttpServlet {
 		String oldpassword=request.getParameter("oldpassword");
 	String newpassword=request.getParameter("newpassword")	;
 	String confirmnewpassword=request.getParameter("confirmnewpassword");
+	// cheking password is strong or not
+		// CPSON chek password strong or not object
+		ChekPasswordStrongOrNot CPSON= new ChekPasswordStrongOrNot();
+		boolean is_password_Strong =CPSON.strongPasswordChecker(newpassword);
 	if(!newpassword.equals(confirmnewpassword)) {
 		response.sendRedirect("changepassword.jsp?msg=notMatch");
 	}
+	
+	 
+	else if( is_password_Strong==false ) {
+		response.sendRedirect("changepassword.jsp?msg=notstrong");	
+	}
+	
 	else {
 		MysqlDataAccess DAO=new MysqlDataAccess();
 		int chek=0;

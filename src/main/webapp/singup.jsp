@@ -42,6 +42,13 @@ if("valid".equals(msg)){
 }
 %>
 <%
+if("notstrong".equals(msg)){
+	%>
+<h1>Enter Strong Password!</h1>
+<% 
+}
+%>
+<%
 if("invalid".equals(msg)){
 	%>
 <h1>This email id is already use!</h1>

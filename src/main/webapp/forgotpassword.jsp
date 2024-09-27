@@ -48,7 +48,13 @@ if("invalid".equals(msg)){
 }
 %>
   
-   
+  <%
+if("notstrong".equals(msg)){
+	%>
+<h1>Enter Strong Password!</h1>
+<% 
+}
+%> 
 
 
     <h2>Online Shopping</h2>

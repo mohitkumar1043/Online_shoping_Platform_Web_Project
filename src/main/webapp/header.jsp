@@ -23,7 +23,7 @@
    }
 %>
     
-            <center><h2> Wellcome On K4kurtis</h2></center>
+            <center><h2> Welcome On K4kurtis</h2></center>
            
             <a href="home.jsp">Home<i class="fa fa-institution"></i></a>
             <a href="mycart.jsp">My Cart<i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>

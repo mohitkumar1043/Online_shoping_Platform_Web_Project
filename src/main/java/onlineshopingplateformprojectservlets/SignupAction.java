@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import onlineshopingplateformprojectusefullclasses.User;
+import onlineshopingplateformprojectusefullclasses.ChekPasswordStrongOrNot;
 import onlineshopingplateformprojectusefullclasses.MysqlDataAccess;
 @SuppressWarnings("serial")
 @WebServlet("/signupaction")
@@ -19,6 +20,14 @@ public class SignupAction extends HttpServlet {
 		String securityquestion=request.getParameter("securityquestion");  
 		String sqanswer=request.getParameter("sqanswer");  
 		String password=request.getParameter("password");
+		 // cheking password is strong or not
+		// CPSON chek password strong or not object
+		ChekPasswordStrongOrNot CPSON= new ChekPasswordStrongOrNot();
+		boolean is_password_Strong =CPSON.strongPasswordChecker(password);
+		if( is_password_Strong==false ) {
+			response.sendRedirect("singup.jsp?msg=notstrong");	
+		}
+		else {
 		String address="";
 		String city="";
 		String state="";
@@ -40,4 +49,5 @@ public class SignupAction extends HttpServlet {
 		
 	}
 
+}
 }
